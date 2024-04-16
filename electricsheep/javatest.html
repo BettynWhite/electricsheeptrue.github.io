@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real</title>
+    <link rel="stylesheet" href="electricsheep.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Variable:wght@400&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const texts = document.querySelectorAll('.animated-text');
+            texts.forEach(element => {
+                const originalHTML = element.innerHTML;
+                element.innerHTML = '';
+                let accumulator = '';
+                let tagOpen = false;
+                let charArray = originalHTML.split('');
+                let i = 0;
+
+                const timer = setInterval(() => {
+                    if (i < charArray.length) {
+                        const char = charArray[i];
+                        if (char === '<') {
+                            tagOpen = true;
+                        }
+                        if (tagOpen) {
+                            accumulator += char;
+                            if (char === '>') {
+                                element.innerHTML += accumulator;
+                                accumulator = '';
+                                tagOpen = false;
+                            }
+                        } else {
+                            if (char === ' ' || char === '\n') {
+                                element.innerHTML += accumulator + char;
+                                accumulator = '';
+                            } else {
+                                accumulator += char;
+                            }
+                        }
+                        i++;
+                    } else {
+                        if (accumulator.length) {
+                            element.innerHTML += accumulator;
+                        }
+                        clearInterval(timer);
+                    }
+                }, 50); // 0.05 seconds per character
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="background-container">
+        <!-- Main background container -->
+    </div>
+    <img src="eephotos/mrroboto.png" class="fixed-image" alt="Mr. Roboto">
+    <div class="fixed-text animated-text">
+        You are approaching<br>
+        your destination...<br><br>
+        Mission: Find the target<br>
+        and bring him back to command.
+    </div>
+    <img src="eephotos/target.jpg" class="target-image" alt="Target">
+    <div class="target-info animated-text">
+        Target info:<br>Name: Rolly<br>Highly radioactive<br>and rapidly deteriorating.<br>Mentally unstable.<br>Tracked to the town of Low.
+    </div>
+</body>
+
+</html>

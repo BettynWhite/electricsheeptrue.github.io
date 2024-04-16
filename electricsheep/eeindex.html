@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>supposed real one</title>
+    <link rel="stylesheet" href="electricsheep.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Variable:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-container">
+        <!-- Main background container -->
+    </div>
+    <img src="eephotos/mrroboto.png" class="fixed-image" alt="Mr. Roboto">
+    <div id="fixedText" class="fixed-text">
+        You are approaching<br>
+        your destination...<br><br>
+        Mission: Find the target<br>
+        and bring him back to command.
+    </div>
+    <img src="eephotos/target.jpg" class="target-image" alt="Target">
+    <div id="targetInfo" class="target-info">
+        Target info:<br>Name: Rolly<br>Highly radioactive<br>and rapidly deteriorating.<br>Mentally unstable.
+    </div>
+
+    <script>
+        function animateText(elementId, rawText) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = ''; // Clear existing text
+            const words = rawText.split(/(\s+)/); // Split by whitespace but include it in results
+
+            words.forEach((word, index) => {
+                const span = document.createElement('span');
+                span.innerHTML = word; // Use innerHTML to preserve spaces and HTML elements like <br>
+                span.style.opacity = 0;
+                span.style.animation = `appear 0.5s ${index * 0.5}s forwards`;
+                element.appendChild(span);
+            });
+        }
+
+        const fixedTextContent = `You are approaching<br>your destination...<br><br>Mission: Find the target<br>and bring him back to command.`;
+        const targetInfoContent = `Target info:<br>Name: Rolly<br>Highly radioactive<br>and rapidly deteriorating.<br>Mentally unstable.`;
+
+        animateText('fixedText', fixedTextContent);
+        animateText('targetInfo', targetInfoContent);
+    </script>
+</body>
+</html>

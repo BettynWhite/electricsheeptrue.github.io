@@ -1,0 +1,27 @@
+/electricsheep
+|
+|-- /eephotos *includes all photos in project
+|   |-- interact.png
+|   |-- back.png
+|
+|-- /fonts
+|   |-- [font files]
+|
+|-- /index
+|   |-- index.html
+|   |-- electricsheep.css
+|   |-- town.html
+|
+|-- /store
+    |-- store.html
+    |-- store.css
+    |-- storeint.html
+    |-- storeint.css
+|
+|-- /House
+    |-- house.html
+    |-- Houseint.html
+|
+|-- /Tv
+    |-- tv.html
+    |-- tvint.html

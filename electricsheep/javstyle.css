@@ -1,0 +1,65 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.background-container {
+    width: 100vw;
+    height: 2110px;
+    background-image: url('eephotos/town.jpg');
+    background-size: 1440px 2110px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+
+.fixed-image {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 300px;
+    height: 300px;
+    z-index: 100;
+}
+
+.fixed-text {
+    position: fixed;
+    top: 55px;
+    left: 320px; /* Slightly adjusted based on image width */
+    color: #aef4ff; /* Light blue color */
+    font-family: 'Source Code Variable', monospace;
+    font-size: 14pt;
+    z-index: 100;
+}
+
+.target-image {
+    position: fixed;
+    bottom: 37px;
+    right: 10px;
+    width: 100px; /* Adjust as necessary */
+    height: 100px; /* Adjust as necessary */
+    z-index: 101;
+}
+
+.target-info {
+    position: fixed;
+    bottom: 10px;
+    right: 120px; /* Right of the image */
+    color: #aef4ff; /* Light blue color */
+    font-family: 'Source Code Variable', monospace;
+    font-size: 14pt;
+    z-index: 101;
+    /* background-color: black; 
+    padding: 5px; */
+    white-space: pre-wrap; /* Keeps your formatting with line breaks */
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
